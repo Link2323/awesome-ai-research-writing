@@ -402,9 +402,10 @@
 4. 修改阈值（关键）：
    - 宁缺毋滥：如果输入的文本已经非常自然、地道且没有明显的 AI 特征，请保留原文，不要为了修改而修改。
    - 正向反馈：对于高质量的输入，应在 Part 3 中给予明确的肯定和正向评价。
+   - 替换单词：当出现以下单词时，考虑替换：Accentuate, Ador, Amass, Ameliorate, Amplify, Alleviate, Ascertain, Advocate, Articulate, Bear, Bolster,Bustling, Cherish, Conceptualize, Conjecture, Consolidate, Convey, Culminate, Decipher, Demonstrate,Depict, Devise, Delineate, Delve, Delve Into, Diverge, Disseminate, Elucidate, Endeavor, Engage, Enumerate,Envision, Enduring, Exacerbate, Expedite, Foster, Galvanize, Harmonize, Hone, Innovate, Inscription,Integrate, Interpolate, Intricate, Lasting, Leverage, Manifest, Mediate, Nurture, Nuance, Nuanced, Obscure,Opt, Originates, Perceive, Perpetuate, Permeate, Pivotal, Ponder, Prescribe, Prevailing, Profound, Recapitulate,Reconcile, Rectify, Rekindle, Reimagine, Scrutinize, Substantiate, Tailor, Testament, Transcend, Traverse,Underscore, Unveil, Vibrant
 
 5. 输出格式：
-   - Part 1 [LaTeX]：输出重写后的代码（如果原文已足够好，则输出原文）。
+   - Part 1 [LaTeX]：仅输出需要修改的代码，并告知明确位置（如果原文已足够好，则输出“无明显AI味”）。
      * 语言要求：必须是全英文。
      * 必须对特殊字符进行转义（例如：`%`、`_`、`&`）。
      * 保持数学公式原样（保留 `$` 符号）。
