@@ -1,25 +1,5 @@
 > Make AI Writing Better for Everyone
 
-## 📖 为什么做这个项目
-
-当你第三次调试同一个润色 prompt 时，隔壁组的同学可能已经用现成的模板改完了三篇论文。
-
-在学术圈，prompt 工程正在成为一种"隐性资源"——顶尖研究组有完善的模板库，而大多数人还在从零摸索。更进一步，agent skills 作为新兴技术能更强大地助力论文写作，但由于存在一定使用门槛，大部分人还不知道如何上手。我们不想看到这种不平等继续。
-
-## 🎯 我们做了什么
-
-我们调研了 [**MSRA**](https://www.microsoft.com/en-us/research/lab/microsoft-research-asia-zh-cn/)、[**Seed**](https://seed.bytedance.com/zh/)、[**SH AI Lab**](https://www.shlab.org.cn/) 等顶尖研究机构的研究员，以及**北大**、**中科大**、**上交**的硕博同学，将他们日常使用的写作技巧开源出来：
-
-- **📝 Prompt 模板库**：翻译、润色、分析等场景的实战 prompt
-- **🤖 Agent Skills**：作为新兴技术，agent skills 能更强大地助力写作，但存在一定使用门槛。我们提供接地气的使用教程，并抽取了写作相关的核心 skills，让你快速上手
-
-## ✨ 特点
-- 🔬 **实战打磨**：来自一线科研人员的真实使用场景
-- 🚀 **开箱即用**：复制即用，无需重复造轮子
-- 🤝 **持续更新**：不断收集新技巧和最佳实践
-
-**不要在 prompt 调试上浪费时间，把精力留给真正的科研。**
-
 ---
 
 ## 📑 目录 (Table of Contents)
@@ -389,6 +369,9 @@
 1. 词汇规范化：
    - 优先使用朴实、精准的学术词汇。避免使用被过度滥用的复杂词汇（例如：除非特定语境，否则避免使用 leverage, delve into, tapestry 等词，改用 use, investigate, context 等）。
    - 只有在必须表达特定技术含义时才使用术语，避免为了形式上的“高级感”而堆砌辞藻。
+   - 避免使用第一人称造句。
+   - 避免使用夸大性质的词汇。
+   - 替换单词：当出现以下单词时，考虑替换：Accentuate, Ador, Amass, Ameliorate, Amplify, Alleviate, Ascertain, Advocate, Articulate, Bear, Bolster,Bustling, Cherish, Conceptualize, Conjecture, Consolidate, Convey, Culminate, Decipher, Demonstrate,Depict, Devise, Delineate, Delve, Delve Into, Diverge, Disseminate, Elucidate, Endeavor, Engage, Enumerate,Envision, Enduring, Exacerbate, Expedite, Foster, Galvanize, Harmonize, Hone, Innovate, Inscription,Integrate, Interpolate, Intricate, Lasting, Leverage, Manifest, Mediate, Nurture, Nuance, Nuanced, Obscure,Opt, Originates, Perceive, Perpetuate, Permeate, Pivotal, Ponder, Prescribe, Prevailing, Profound, Recapitulate,Reconcile, Rectify, Rekindle, Reimagine, Scrutinize, Substantiate, Tailor, Testament, Transcend, Traverse,Underscore, Unveil, Vibrant
 
 2. 结构自然化：
    - 严禁使用列表格式：必须将所有的 item 内容转化为逻辑连贯的普通段落。
@@ -402,15 +385,14 @@
 4. 修改阈值（关键）：
    - 宁缺毋滥：如果输入的文本已经非常自然、地道且没有明显的 AI 特征，请保留原文，不要为了修改而修改。
    - 正向反馈：对于高质量的输入，应在 Part 3 中给予明确的肯定和正向评价。
-   - 替换单词：当出现以下单词时，考虑替换：Accentuate, Ador, Amass, Ameliorate, Amplify, Alleviate, Ascertain, Advocate, Articulate, Bear, Bolster,Bustling, Cherish, Conceptualize, Conjecture, Consolidate, Convey, Culminate, Decipher, Demonstrate,Depict, Devise, Delineate, Delve, Delve Into, Diverge, Disseminate, Elucidate, Endeavor, Engage, Enumerate,Envision, Enduring, Exacerbate, Expedite, Foster, Galvanize, Harmonize, Hone, Innovate, Inscription,Integrate, Interpolate, Intricate, Lasting, Leverage, Manifest, Mediate, Nurture, Nuance, Nuanced, Obscure,Opt, Originates, Perceive, Perpetuate, Permeate, Pivotal, Ponder, Prescribe, Prevailing, Profound, Recapitulate,Reconcile, Rectify, Rekindle, Reimagine, Scrutinize, Substantiate, Tailor, Testament, Transcend, Traverse,Underscore, Unveil, Vibrant
 
 5. 输出格式：
-   - Part 1 [LaTeX]：仅输出需要修改的代码，并告知明确位置（如果原文已足够好，则输出“无明显AI味”）。
+   - Part 1 [LaTeX]：仅分点输出需要修改的文字，并告知明确位置附上中文翻译（如果原文已足够好，则输出“无明显AI味”），不需要修改的句子不需要输出。
+     * 需Latex代码。
      * 语言要求：必须是全英文。
      * 必须对特殊字符进行转义（例如：`%`、`_`、`&`）。
      * 保持数学公式原样（保留 `$` 符号）。
-   - Part 2 [Translation]：对应的中文直译。
-   - Part 3 [Modification Log]：
+   - Part 2 [Modification Log]：
      * 如果进行了修改：简要说明调整了哪些机械化表达。
      * 如果未修改：请直接输出中文评价：“[检测通过] 原文表达地道自然，无明显 AI 味，建议保留。”
    - 除以上三部分外，不要输出任何多余的对话。
